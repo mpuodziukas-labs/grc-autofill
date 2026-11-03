@@ -1,0 +1,93 @@
+[
+ {
+  "claim_id": "CD-01",
+  "evidence": [
+   "EV-MODEL"
+  ],
+  "kind": "claim_invalidated",
+  "reasons": [
+   "CHAIN_BROKEN",
+   "DIGEST_MISMATCH"
+  ],
+  "report": "model-card",
+  "section": "model-details"
+ },
+ {
+  "claim_id": "CD-02",
+  "evidence": [
+   "EV-MODEL"
+  ],
+  "kind": "claim_invalidated",
+  "reasons": [
+   "CHAIN_BROKEN",
+   "DIGEST_MISMATCH"
+  ],
+  "report": "model-card",
+  "section": "security-considerations"
+ },
+ {
+  "claim_id": "CD-03",
+  "evidence": [
+   "EV-MODEL"
+  ],
+  "kind": "claim_invalidated",
+  "reasons": [
+   "CHAIN_BROKEN",
+   "DIGEST_MISMATCH"
+  ],
+  "report": "model-card",
+  "section": "metrics"
+ },
+ {
+  "claim_id": "CD-04",
+  "evidence": [
+   "EV-MODEL"
+  ],
+  "kind": "claim_invalidated",
+  "reasons": [
+   "CHAIN_BROKEN",
+   "DIGEST_MISMATCH"
+  ],
+  "report": "ai-rmf-profile",
+  "section": "measure"
+ },
+ {
+  "claim_id": "CD-05",
+  "evidence": [
+   "EV-MODEL"
+  ],
+  "kind": "claim_invalidated",
+  "reasons": [
+   "CHAIN_BROKEN",
+   "DIGEST_MISMATCH"
+  ],
+  "report": "ai-rmf-profile",
+  "section": "measure"
+ },
+ {
+  "claim_id": "CD-06",
+  "evidence": [
+   "EV-MODEL"
+  ],
+  "kind": "claim_invalidated",
+  "reasons": [
+   "CHAIN_BROKEN",
+   "DIGEST_MISMATCH"
+  ],
+  "report": "eu-ai-annex-iv",
+  "section": "point-3-monitoring-and-control"
+ },
+ {
+  "claim_id": "CD-07",
+  "evidence": [
+   "EV-MODEL"
+  ],
+  "kind": "claim_invalidated",
+  "reasons": [
+   "CHAIN_BROKEN",
+   "DIGEST_MISMATCH"
+  ],
+  "report": "eu-ai-annex-iv",
+  "section": "point-1-general-description"
+ }
+]

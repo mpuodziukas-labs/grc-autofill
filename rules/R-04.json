@@ -1,0 +1,1 @@
+{"control": "AI-04", "evidence": "EV-SCH", "field": "metrics.valid_rate", "max_age_days": 30, "op": ">=", "rule_id": "R-04", "threshold": 1, "title": "structured output matches the answer schema"}

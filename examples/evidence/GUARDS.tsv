@@ -1,0 +1,7 @@
+control_id	statement	tags	has_selftest	last_lint_rc	last_lint_time	guard_sha8
+g-acl	retrieval never crosses group boundary	NIST:GOVERN,ISO42001:8,SOC2:CC6	Y	0	2026-11-01T06:00:00Z	1a2b3c4d
+g-scrub	no email or phone pattern reaches the index	NIST:MANAGE,ISO42001:8,SOC2:CC6	Y	0	2026-11-01T06:00:00Z	5e6f7a8b
+g-prompt-pin	prompt hashes match the locked list	NIST:GOVERN,ISO42001:6,SOC2:CC8	Y	0	2026-11-01T06:00:00Z	9c0d1e2f
+g-cites	every answer carries a source id	NIST:MEASURE,ISO42001:9,SOC2:CC7	Y	1	2026-11-01T06:00:00Z	3a4b5c6d
+g-latency	retrieval p95 under 800 ms	NIST:MEASURE,SOC2:A1	N	UNKNOWN	2026-10-20T06:00:00Z	7e8f9a0b
+g-models	only allowlisted model ids are called	NONE	Y	0	2026-11-01T06:00:00Z	1c2d3e4f

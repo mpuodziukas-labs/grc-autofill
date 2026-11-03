@@ -1,0 +1,48 @@
+name: ci
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * *"
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+      - name: pytest
+        run: |
+          python3 -m pip install pytest
+          python3 -m pytest -q
+      - name: grc-autofill selftest
+        run: python3 grc_autofill.py --selftest
+      - name: claimdiode selftest
+        run: python3 claimdiode.py --selftest
+      - name: rbac selftest and policy checks
+        run: |
+          python3 rbac.py --selftest
+          python3 rbac.py check viewer read_report
+          python3 rbac.py check approver approve_report --author alice --actor bob
+          if python3 rbac.py check approver approve_report --author alice --actor alice; then echo "self-approval was allowed"; exit 1; fi
+          if python3 rbac.py check viewer change_rules; then echo "viewer change_rules was allowed"; exit 1; fi
+      - name: claimdiode demo
+        run: python3 claimdiode.py demo
+      - name: trace selftest and matrix check
+        run: |
+          python3 trace.py --selftest
+          python3 trace.py check
+      - name: regenerate checked-in output
+        run: |
+          python3 grc_autofill.py --evidence examples/evidence --all --out examples/out --date 2026-11-02
+          python3 claimdiode.py --now 2026-11-02T00:00:00Z regen
+          python3 trace.py render
+          python3 trace.py escalate --findings examples/findings.json --out examples/escalate-out
+      - name: verify claims
+        run: python3 claimdiode.py --now 2026-11-02T00:00:00Z verify
+      - name: output must be byte-identical to what is checked in
+        run: |
+          git diff --exit-code examples/out examples/claimdiode-out examples/escalate-out TRACE-MATRIX.md
+          test -z "$(git status --porcelain -- examples TRACE-MATRIX.md)"

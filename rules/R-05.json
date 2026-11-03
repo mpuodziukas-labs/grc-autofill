@@ -1,0 +1,1 @@
+{"control": "AI-05", "evidence": "EV-TOOL", "field": "metrics.violations", "max_age_days": 30, "op": "<=", "rule_id": "R-05", "threshold": 0, "title": "tool calls stay inside the allowlist"}

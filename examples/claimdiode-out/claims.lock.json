@@ -1,0 +1,236 @@
+{
+ "artifacts": {
+  "EV-CTRL": "80dde6448b7b71c684ff253733874c99b7aeb634813866ec0fddd63a3a9c43cc",
+  "EV-INJ": "de3f45c30be53374aade29187c86f47cadb671cd1253a25279722f2a0d7d93f2",
+  "EV-MODEL": "20c5f8c8f9eea30681f04bd9877023d2e9475edbc21cf7c56eae5620147fe6e6",
+  "EV-PII": "bb8de8278e05bc6b554968d9bb12f5a1612ee7ca0404eb12891b9d8426ac0806",
+  "EV-REF": "d497bc7b1f6827c0d44ed6e984d506335aa0e593c231bc08774f3bc8493aa92f",
+  "EV-SCH": "557c25475becf9eb5989e502b375e936752f07735528855bbcf92c4ae986d4df",
+  "EV-TOOL": "d4bddb0b92530451289ddaed574cc814234707827f70434692f0f2b8779ef023"
+ },
+ "chain_head": "f84387bc8ca50de6adcb3120681d990dd32b3502f7d4223af85c98fa257efea4",
+ "chain_len": 7,
+ "claims": [
+  {
+   "annotation": "[claim CD-01 | sha256:d3ece036794de76f | AUTO | HIGH | ev:EV-MODEL]",
+   "claim_digest": "d3ece036794de76f911aff0fc9f09c284664bc7daa782c6e77cf508317a546e9",
+   "claim_id": "CD-01",
+   "confidence": "HIGH",
+   "edges": [],
+   "evidence": {
+    "EV-MODEL": "20c5f8c8f9eea30681f04bd9877023d2e9475edbc21cf7c56eae5620147fe6e6"
+   },
+   "provenance": "AUTO",
+   "report": "model-card",
+   "section": "model-details",
+   "status": "OK",
+   "text": "Assessed build acme-rag-assistant 1.4.2 is identified by 4 file digests (manifest sha256 910c22ca8a5c)."
+  },
+  {
+   "annotation": "[claim CD-02 | sha256:751faeb0e0e799e2 | AUTO | LOW | ev:EV-MODEL,EV-INJ]",
+   "claim_digest": "751faeb0e0e799e24811e7fffd38decc7a9319938a96d9cb5bdbe8096f4d9afa",
+   "claim_id": "CD-02",
+   "confidence": "LOW",
+   "edges": [
+    {
+     "class": "INFERRED",
+     "edge": "C-03:owasp_llm"
+    }
+   ],
+   "evidence": {
+    "EV-INJ": "de3f45c30be53374aade29187c86f47cadb671cd1253a25279722f2a0d7d93f2",
+    "EV-MODEL": "20c5f8c8f9eea30681f04bd9877023d2e9475edbc21cf7c56eae5620147fe6e6"
+   },
+   "provenance": "AUTO",
+   "report": "model-card",
+   "section": "security-considerations",
+   "status": "OK",
+   "text": "The system-prompt canary leaked in 0 of 4 injection probes."
+  },
+  {
+   "annotation": "[claim CD-03 | sha256:3586ef19e00fb390 | AUTO | HIGH | ev:EV-MODEL,EV-REF]",
+   "claim_digest": "3586ef19e00fb3909af05f87d87f4a6a6aa573ac469565d56ed5dd63acf20488",
+   "claim_id": "CD-03",
+   "confidence": "HIGH",
+   "edges": [
+    {
+     "class": "GROUNDED",
+     "edge": "C-07:soc2"
+    }
+   ],
+   "evidence": {
+    "EV-MODEL": "20c5f8c8f9eea30681f04bd9877023d2e9475edbc21cf7c56eae5620147fe6e6",
+    "EV-REF": "d497bc7b1f6827c0d44ed6e984d506335aa0e593c231bc08774f3bc8493aa92f"
+   },
+   "provenance": "AUTO",
+   "report": "model-card",
+   "section": "metrics",
+   "status": "OK",
+   "text": "4 of 4 harmful-request probes were refused."
+  },
+  {
+   "annotation": "[claim CD-04 | sha256:ae4b1f2af1a09b44 | AUTO | LOW | ev:EV-MODEL,EV-PII]",
+   "claim_digest": "ae4b1f2af1a09b44e3c2d8ad25528d2b2e1135b653b201d1bb12720295ff2903",
+   "claim_id": "CD-04",
+   "confidence": "LOW",
+   "edges": [
+    {
+     "class": "INFERRED",
+     "edge": "C-02:owasp_llm"
+    },
+    {
+     "class": "GROUNDED",
+     "edge": "C-02:soc2"
+    }
+   ],
+   "evidence": {
+    "EV-MODEL": "20c5f8c8f9eea30681f04bd9877023d2e9475edbc21cf7c56eae5620147fe6e6",
+    "EV-PII": "bb8de8278e05bc6b554968d9bb12f5a1612ee7ca0404eb12891b9d8426ac0806"
+   },
+   "provenance": "AUTO",
+   "report": "ai-rmf-profile",
+   "section": "measure",
+   "status": "OK",
+   "text": "Synthetic personal data was echoed in 0 of 3 probes."
+  },
+  {
+   "annotation": "[claim CD-05 | sha256:2d8c370006da9f60 | AUTO | HIGH | ev:EV-MODEL,EV-SCH]",
+   "claim_digest": "2d8c370006da9f60dc4819513ea2dd6b835cd67f4b761fa9d40f2f4375dc1716",
+   "claim_id": "CD-05",
+   "confidence": "HIGH",
+   "edges": [
+    {
+     "class": "GROUNDED",
+     "edge": "C-04:csf2"
+    }
+   ],
+   "evidence": {
+    "EV-MODEL": "20c5f8c8f9eea30681f04bd9877023d2e9475edbc21cf7c56eae5620147fe6e6",
+    "EV-SCH": "557c25475becf9eb5989e502b375e936752f07735528855bbcf92c4ae986d4df"
+   },
+   "provenance": "AUTO",
+   "report": "ai-rmf-profile",
+   "section": "measure",
+   "status": "OK",
+   "text": "3 of 3 structured-output probes matched the answer schema."
+  },
+  {
+   "annotation": "[claim CD-06 | sha256:b3817b6c3f0c7d51 | AUTO | HIGH | ev:EV-MODEL,EV-TOOL]",
+   "claim_digest": "b3817b6c3f0c7d51d3fb6a91bcabb163692765b063431595995628a0a075184e",
+   "claim_id": "CD-06",
+   "confidence": "HIGH",
+   "edges": [],
+   "evidence": {
+    "EV-MODEL": "20c5f8c8f9eea30681f04bd9877023d2e9475edbc21cf7c56eae5620147fe6e6",
+    "EV-TOOL": "d4bddb0b92530451289ddaed574cc814234707827f70434692f0f2b8779ef023"
+   },
+   "provenance": "AUTO",
+   "report": "eu-ai-annex-iv",
+   "section": "point-3-monitoring-and-control",
+   "status": "OK",
+   "text": "0 tool calls fell outside the allowlist in 3 tool probes."
+  },
+  {
+   "annotation": "[claim CD-07 | sha256:d3ece036794de76f | AUTO | HIGH | ev:EV-MODEL]",
+   "claim_digest": "d3ece036794de76f911aff0fc9f09c284664bc7daa782c6e77cf508317a546e9",
+   "claim_id": "CD-07",
+   "confidence": "HIGH",
+   "edges": [],
+   "evidence": {
+    "EV-MODEL": "20c5f8c8f9eea30681f04bd9877023d2e9475edbc21cf7c56eae5620147fe6e6"
+   },
+   "provenance": "AUTO",
+   "report": "eu-ai-annex-iv",
+   "section": "point-1-general-description",
+   "status": "OK",
+   "text": "The test evidence in this report is bound to model manifest sha256 910c22ca8a5c."
+  },
+  {
+   "annotation": "[claim CD-08 | sha256:57be143ccf37adcd | INFERRED | LOW | ev:EV-CTRL]",
+   "claim_digest": "57be143ccf37adcd567b2adb6b25f2c8b94efa8ec388c937538f7acee8e96f1b",
+   "claim_id": "CD-08",
+   "confidence": "LOW",
+   "edges": [
+    {
+     "class": "INFERRED",
+     "edge": "C-03:owasp_llm"
+    }
+   ],
+   "evidence": {
+    "EV-CTRL": "80dde6448b7b71c684ff253733874c99b7aeb634813866ec0fddd63a3a9c43cc"
+   },
+   "provenance": "INFERRED",
+   "report": "ai-rmf-profile",
+   "section": "map",
+   "status": "OK",
+   "text": "Prompt-injection testing is mapped to the OWASP LLM list by title match; the mapping is the author inference."
+  },
+  {
+   "annotation": "[claim CD-09 | sha256:57be143ccf37adcd | AUTO | HIGH | ev:EV-CTRL]",
+   "claim_digest": "57be143ccf37adcd567b2adb6b25f2c8b94efa8ec388c937538f7acee8e96f1b",
+   "claim_id": "CD-09",
+   "confidence": "HIGH",
+   "edges": [
+    {
+     "class": "GROUNDED",
+     "edge": "C-01:soc2"
+    }
+   ],
+   "evidence": {
+    "EV-CTRL": "80dde6448b7b71c684ff253733874c99b7aeb634813866ec0fddd63a3a9c43cc"
+   },
+   "provenance": "AUTO",
+   "report": "soc2-style-controls-report",
+   "section": "test-results",
+   "status": "OK",
+   "text": "8 controls are registered and 6 have a receipt file on disk."
+  },
+  {
+   "annotation": "[claim CD-10 | sha256:57be143ccf37adcd | AUTO | HIGH | ev:EV-CTRL]",
+   "claim_digest": "57be143ccf37adcd567b2adb6b25f2c8b94efa8ec388c937538f7acee8e96f1b",
+   "claim_id": "CD-10",
+   "confidence": "HIGH",
+   "edges": [],
+   "evidence": {
+    "EV-CTRL": "80dde6448b7b71c684ff253733874c99b7aeb634813866ec0fddd63a3a9c43cc"
+   },
+   "provenance": "AUTO",
+   "report": "soc2-style-controls-report",
+   "section": "exceptions-noted",
+   "status": "OK",
+   "text": "2 registered controls have no receipt file on disk."
+  },
+  {
+   "annotation": "[claim CD-11 | sha256:57be143ccf37adcd | JUDGMENT | MEDIUM | ev:EV-CTRL]",
+   "claim_digest": "57be143ccf37adcd567b2adb6b25f2c8b94efa8ec388c937538f7acee8e96f1b",
+   "claim_id": "CD-11",
+   "confidence": "MEDIUM",
+   "edges": [],
+   "evidence": {
+    "EV-CTRL": "80dde6448b7b71c684ff253733874c99b7aeb634813866ec0fddd63a3a9c43cc"
+   },
+   "provenance": "JUDGMENT",
+   "report": "ai-rmf-profile",
+   "section": "manage",
+   "status": "OK",
+   "text": "Owner judgment: controls without a receipt stay open items until the next review."
+  },
+  {
+   "annotation": "[claim CD-12 | sha256:57be143ccf37adcd | AUTO | HIGH | ev:EV-CTRL]",
+   "claim_digest": "57be143ccf37adcd567b2adb6b25f2c8b94efa8ec388c937538f7acee8e96f1b",
+   "claim_id": "CD-12",
+   "confidence": "HIGH",
+   "edges": [],
+   "evidence": {
+    "EV-CTRL": "80dde6448b7b71c684ff253733874c99b7aeb634813866ec0fddd63a3a9c43cc"
+   },
+   "provenance": "AUTO",
+   "report": "poam",
+   "section": "poam-items",
+   "status": "OK",
+   "text": "3 risks in the register have an open gap."
+  }
+ ],
+ "generated": "2026-11-02T00:00:00Z",
+ "max_age_days": 30
+}

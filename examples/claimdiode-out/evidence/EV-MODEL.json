@@ -1,0 +1,41 @@
+{
+ "collected_at": "2026-11-02T00:00:00Z",
+ "content": {
+  "config": {
+   "max_tokens": 1024,
+   "retrieval_top_k": 5,
+   "system_prompt_sha256": "2e7176c854bddf1e7bab27527c1945de67d20d077035c40d0d60e7d5cb5b9540",
+   "temperature": 0.0,
+   "tool_allowlist": [
+    "get_order_status",
+    "search_docs"
+   ]
+  },
+  "files": [
+   {
+    "path": "weights/shard-00001.bin",
+    "sha256": "1867e9d2cd80a184dabb37af733fc3e204798eda060349173371bd2fbfba598f"
+   },
+   {
+    "path": "weights/shard-00002.bin",
+    "sha256": "d1ce7739b20d8d7fcdf1023cfa25a838dec5331e712deb2a41cca799d146c15d"
+   },
+   {
+    "path": "tokenizer.json",
+    "sha256": "4d1a406906334b1fe8c0420d798c2b0ab58b02faf6438f8ae9cbab183a0f236e"
+   },
+   {
+    "path": "generation_config.json",
+    "sha256": "97aa65935c20680388b22dbd6fe26d44ea12c2816de9062b1a63bc883f49f77c"
+   }
+  ],
+  "model_id": "acme-rag-assistant",
+  "version": "1.4.2"
+ },
+ "id": "EV-MODEL",
+ "kind": "model_manifest",
+ "metrics": {
+  "file_count": 4,
+  "manifest_sha12": "910c22ca8a5c"
+ }
+}

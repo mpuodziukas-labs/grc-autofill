@@ -1,0 +1,6 @@
+id	source	class	cause	age_days	owner
+ex-001	GUARDS.tsv	OPEN	owner not yet assigned for scanned-PDF scrub	41	data-lead
+ex-002	GUARDS.tsv	ACCEPTED	citation check skipped for streaming answers until v2	23	eval-lead
+ex-003	CONTROLS.tsv	OPEN	receipt for C-06 not yet captured	12	eval-lead
+ex-004	RISK-REGISTER.tsv	ACCEPTED	provider notice feed unavailable	60	platform-lead
+ex-005	GUARDS.tsv	OPEN	flaky retrieval latency check	5	platform-lead

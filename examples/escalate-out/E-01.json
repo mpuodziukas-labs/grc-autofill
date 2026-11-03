@@ -1,0 +1,21 @@
+{
+ "fields": {
+  "description": "Rule E-01 fired on trigger claim_invalidated (severity high, owner role compliance_engineer).\nRespond within 24 hours of creation (a policy input in ESCALATION.tsv, not a measured value).\n\nFindings (7):\n- CD-01 model-card/model-details: CHAIN_BROKEN,DIGEST_MISMATCH; evidence EV-MODEL\n- CD-02 model-card/security-considerations: CHAIN_BROKEN,DIGEST_MISMATCH; evidence EV-MODEL\n- CD-03 model-card/metrics: CHAIN_BROKEN,DIGEST_MISMATCH; evidence EV-MODEL\n- CD-04 ai-rmf-profile/measure: CHAIN_BROKEN,DIGEST_MISMATCH; evidence EV-MODEL\n- CD-05 ai-rmf-profile/measure: CHAIN_BROKEN,DIGEST_MISMATCH; evidence EV-MODEL\n- CD-06 eu-ai-annex-iv/point-3-monitoring-and-control: CHAIN_BROKEN,DIGEST_MISMATCH; evidence EV-MODEL\n- CD-07 eu-ai-annex-iv/point-1-general-description: CHAIN_BROKEN,DIGEST_MISMATCH; evidence EV-MODEL\n\nControl ids (from TRACE-MATRIX.tsv, enforcing function claimdiode.py::verify):\n- EU AI Act Art. 11\n- ISO/IEC 42001 10.2\n- SOC 2 TSC 2017 CC4.2\n\nMapping for review only. It is not a statement that any control is met or failed.",
+  "issuetype": {
+   "name": "Task"
+  },
+  "labels": [
+   "claim-invalidated",
+   "evidence-drift",
+   "grc",
+   "sla-24h"
+  ],
+  "priority": {
+   "name": "High"
+  },
+  "project": {
+   "key": "GRC"
+  },
+  "summary": "[E-01] claim_invalidated: 7 finding(s)"
+ }
+}

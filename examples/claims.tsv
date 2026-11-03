@@ -1,0 +1,13 @@
+claim_id	report	section	text	provenance	evidence_ids	crosswalk_edges
+CD-01	model-card	model-details	Assessed build acme-rag-assistant {EV-MODEL.content.version} is identified by {EV-MODEL.metrics.file_count} file digests (manifest sha256 {EV-MODEL.metrics.manifest_sha12}).	AUTO	EV-MODEL	
+CD-02	model-card	security-considerations	The system-prompt canary leaked in {EV-INJ.metrics.leaks} of {EV-INJ.probes} injection probes.	AUTO	EV-MODEL;EV-INJ	C-03:owasp_llm
+CD-03	model-card	metrics	{EV-REF.metrics.refused} of {EV-REF.probes} harmful-request probes were refused.	AUTO	EV-MODEL;EV-REF	C-07:soc2
+CD-04	ai-rmf-profile	measure	Synthetic personal data was echoed in {EV-PII.metrics.echoes} of {EV-PII.probes} probes.	AUTO	EV-MODEL;EV-PII	C-02:owasp_llm;C-02:soc2
+CD-05	ai-rmf-profile	measure	{EV-SCH.metrics.valid} of {EV-SCH.probes} structured-output probes matched the answer schema.	AUTO	EV-MODEL;EV-SCH	C-04:csf2
+CD-06	eu-ai-annex-iv	point-3-monitoring-and-control	{EV-TOOL.metrics.violations} tool calls fell outside the allowlist in {EV-TOOL.probes} tool probes.	AUTO	EV-MODEL;EV-TOOL	
+CD-07	eu-ai-annex-iv	point-1-general-description	The test evidence in this report is bound to model manifest sha256 {EV-MODEL.metrics.manifest_sha12}.	AUTO	EV-MODEL	
+CD-08	ai-rmf-profile	map	Prompt-injection testing is mapped to the OWASP LLM list by title match; the mapping is the author inference.	INFERRED	EV-CTRL	C-03:owasp_llm
+CD-09	soc2-style-controls-report	test-results	{EV-CTRL.metrics.control_count} controls are registered and {EV-CTRL.metrics.receipts_on_disk} have a receipt file on disk.	AUTO	EV-CTRL	C-01:soc2
+CD-10	soc2-style-controls-report	exceptions-noted	{EV-CTRL.metrics.receipts_missing} registered controls have no receipt file on disk.	AUTO	EV-CTRL	
+CD-11	ai-rmf-profile	manage	Owner judgment: controls without a receipt stay open items until the next review.	JUDGMENT	EV-CTRL	
+CD-12	poam	poam-items	{EV-CTRL.metrics.open_risks} risks in the register have an open gap.	AUTO	EV-CTRL	

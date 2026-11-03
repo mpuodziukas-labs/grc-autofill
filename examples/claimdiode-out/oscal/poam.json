@@ -1,0 +1,49 @@
+{
+ "plan-of-action-and-milestones": {
+  "import-ssp": {
+   "href": "#claimdiode-system-security-plan"
+  },
+  "metadata": {
+   "last-modified": "2026-11-02T00:00:00Z",
+   "oscal-version": "1.1.2",
+   "title": "claimdiode plan of action and milestones",
+   "version": "1.0.0"
+  },
+  "poam-items": [
+   {
+    "description": "scrub misses free-text names in scanned PDFs",
+    "props": [
+     {
+      "name": "risk-id",
+      "value": "R-02"
+     }
+    ],
+    "title": "Open gap on risk R-02",
+    "uuid": "237ff809-043b-53e6-b5ff-615ec97f359c"
+   },
+   {
+    "description": "citation check not yet run on streaming answers",
+    "props": [
+     {
+      "name": "risk-id",
+      "value": "R-04"
+     }
+    ],
+    "title": "Open gap on risk R-04",
+    "uuid": "7a45b164-a8b7-5bfe-bbf1-99e5d3e7be56"
+   },
+   {
+    "description": "no provider change notice feed",
+    "props": [
+     {
+      "name": "risk-id",
+      "value": "R-06"
+     }
+    ],
+    "title": "Open gap on risk R-06",
+    "uuid": "3a43c58e-442c-56bf-8451-47482acadef2"
+   }
+  ],
+  "uuid": "680a9060-e053-580b-9843-64bc1c20948e"
+ }
+}

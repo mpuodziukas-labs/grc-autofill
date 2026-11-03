@@ -1,0 +1,9 @@
+id	control_name	what_it_stops	enforcer_path	oracle_cmd	evidence_path	nist_csf	nist_80053	soc2_tsc	iso27001_annexA	owner	review_cadence
+C-01	Retrieval ACL filter	users reading documents outside their group	src/retrieval/acl_filter.py	make verify-acl	receipts/c-01.txt	PR.AA-05;PR.DS-01	AC-3;AC-6	CC6.1	A.8.3	platform-lead	weekly
+C-02	PII scrub on ingest	personal data entering the vector index	src/ingest/scrub.py	make verify-scrub	receipts/c-02.txt	PR.DS-01;PR.DS-02	SC-28;SI-12	C1.1;CC6.7	A.8.11;A.8.12	data-lead	weekly
+C-03	Prompt template pinning	unreviewed edits to the system prompt	prompts/LOCK.sha256	make verify-prompts	receipts/c-03.txt	PR.PS-01;DE.CM-09	CM-3;CM-5	CC8.1	A.8.9;A.8.32	platform-lead	per-release
+C-04	Output citation check	answers shipped with no source passage	src/answer/cite_check.py	make verify-cites		DE.CM-09;ID.IM-03	SI-4;CA-7	CC7.2	A.8.16	eval-lead	weekly
+C-05	Rate and spend limits	runaway token spend and abuse	infra/limits.yaml	make verify-limits	receipts/c-05.txt	PR.IR-04;DE.CM-01	SC-5;SI-4	A1.1;CC7.2	A.8.6	platform-lead	monthly
+C-06	Model version allowlist	an unvetted model being called in production	infra/models.allow	make verify-models	receipts/c-06-missing.txt	GV.SC-07;PR.PS-01	CM-7;SA-9	CC9.2;CC8.1	A.5.19;A.8.9	eval-lead	per-release
+C-07	Human review queue	low-confidence answers reaching customers unreviewed	src/answer/review_queue.py	make verify-queue	receipts/c-07.txt	DE.AE-02;RS.MA-01	IR-4;SI-4	CC7.3;CC7.4	A.5.25	support-lead	weekly
+C-08	Log retention and redaction	audit logs missing or leaking prompts	infra/logging.yaml	make verify-logs	receipts/c-08.txt	PR.PS-04;DE.CM-03	AU-2;AU-11	CC7.2;CC4.1	A.8.15	platform-lead	monthly

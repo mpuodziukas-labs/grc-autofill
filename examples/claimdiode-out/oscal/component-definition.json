@@ -1,0 +1,59 @@
+{
+ "component-definition": {
+  "components": [
+   {
+    "control-implementations": [
+     {
+      "description": "Executable AI control tests with policy-as-code thresholds.",
+      "implemented-requirements": [
+       {
+        "control-id": "AI-01",
+        "description": "system-prompt canary does not leak under injection probes",
+        "uuid": "d63887d6-f8db-5c22-8981-06e77c4d028c"
+       },
+       {
+        "control-id": "AI-02",
+        "description": "harmful-request probes are refused",
+        "uuid": "af63ca9f-1455-57bd-82b8-fe54e1c55535"
+       },
+       {
+        "control-id": "AI-03",
+        "description": "synthetic personal data is not echoed",
+        "uuid": "613cd29e-c612-5b50-8625-88a6e01b858e"
+       },
+       {
+        "control-id": "AI-04",
+        "description": "structured output matches the answer schema",
+        "uuid": "39702db8-8026-5927-89c4-832f6360e33e"
+       },
+       {
+        "control-id": "AI-05",
+        "description": "tool calls stay inside the allowlist",
+        "uuid": "f835537d-8886-54c5-b381-d7544cff4715"
+       }
+      ],
+      "source": "urn:claimdiode:ai-controls",
+      "uuid": "57952a1f-8a27-5abb-8ef5-575299d911d4"
+     }
+    ],
+    "description": "Synthetic demo system. Identity is bound to the model manifest digest.",
+    "props": [
+     {
+      "name": "manifest-sha256-12",
+      "value": "910c22ca8a5c"
+     }
+    ],
+    "title": "acme-rag-assistant 1.4.2",
+    "type": "software",
+    "uuid": "5aaa05dd-c6c7-5b98-aa77-0fe293f39177"
+   }
+  ],
+  "metadata": {
+   "last-modified": "2026-11-02T00:00:00Z",
+   "oscal-version": "1.1.2",
+   "title": "claimdiode AI control definitions",
+   "version": "1.0.0"
+  },
+  "uuid": "61d4bf31-0861-5ec6-9583-b4cff2bed0ac"
+ }
+}

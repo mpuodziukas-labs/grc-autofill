@@ -1,0 +1,11 @@
+{
+  "roles": {
+    "viewer": ["read_report"],
+    "analyst": ["read_report", "edit_judgment"],
+    "approver": ["read_report", "approve_report"],
+    "admin": ["read_report", "change_rules"]
+  },
+  "separation_of_duties": [
+    {"action": "approve_report", "rule": "actor must differ from author"}
+  ]
+}

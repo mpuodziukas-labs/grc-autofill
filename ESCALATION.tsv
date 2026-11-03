@@ -1,0 +1,10 @@
+rule_id	trigger	severity	jira_priority	labels	owner_role	sla_hours
+E-01	claim_invalidated	high	High	grc,claim-invalidated,evidence-drift	compliance_engineer	24
+E-02	chain_broken	critical	Highest	grc,evidence-chain,integrity	security_lead	4
+E-03	digest_mismatch	critical	Highest	grc,evidence-digest,integrity	security_lead	4
+E-04	rule_fail	high	High	grc,policy-violation,rule-fail	control_owner	24
+E-05	confidence_low	medium	Medium	grc,low-confidence	compliance_engineer	72
+E-06	evidence_stale	medium	Medium	grc,stale-evidence	control_owner	72
+E-07	rule_toothless	high	High	grc,gate-integrity	compliance_engineer	48
+E-08	evidence_missing	medium	Medium	grc,missing-evidence	control_owner	72
+E-09	malformed_evidence	medium	Medium	grc,malformed-evidence	compliance_engineer	48

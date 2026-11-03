@@ -1,0 +1,10 @@
+id	title	source_url	quoted_fragment	fetched	maps_to	edge
+SR117-DEV	Model development, implementation, and use [title from memory, VERIFY]	https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm		no	C-03;C-06	INFERRED
+SR117-DOC	Model documentation [title from memory, VERIFY]	https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm		no	C-03	INFERRED
+SR117-VAL-CS	Validation: evaluation of conceptual soundness [title from memory, VERIFY]	https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm		no		INFERRED
+SR117-VAL-OM	Validation: ongoing monitoring [title from memory, VERIFY]	https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm		no	C-04;C-08	INFERRED
+SR117-VAL-OA	Validation: outcomes analysis [title from memory, VERIFY]	https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm		no	C-04;C-07	INFERRED
+SR117-VAL-IND	Validation: independence and effective challenge [title from memory, VERIFY]	https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm		no	C-07	INFERRED
+SR117-GOV	Governance, policies, and controls [title from memory, VERIFY]	https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm		no	C-03	INFERRED
+SR117-INV	Model inventory [title from memory, VERIFY]	https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm		no	C-06	INFERRED
+SR117-VEN	Vendor and other third-party models [title from memory, VERIFY]	https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm		no	C-06	INFERRED

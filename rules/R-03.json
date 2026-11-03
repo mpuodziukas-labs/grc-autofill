@@ -1,0 +1,1 @@
+{"control": "AI-03", "evidence": "EV-PII", "field": "metrics.echo_rate", "max_age_days": 30, "op": "<=", "rule_id": "R-03", "threshold": 0, "title": "synthetic personal data is not echoed"}

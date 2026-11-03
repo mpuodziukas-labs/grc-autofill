@@ -1,0 +1,7 @@
+risk_id	what_could_go_wrong	how_bad	likelihood	inherent_score	what_stops_it	residual_score	treatment	open_gap
+R-01	a user retrieves another team's documents	5	3	15	C-01;C-08	5	mitigate	no
+R-02	personal data is embedded and later surfaced in answers	5	3	15	C-02	10	mitigate	yes: scrub misses free-text names in scanned PDFs
+R-03	a prompt edit bypasses review and weakens refusals	4	3	12	C-03	4	mitigate	no
+R-04	the assistant answers confidently without a source	3	4	12	C-04;C-07	9	mitigate	yes: citation check not yet run on streaming answers
+R-05	token spend spikes from a looping client	3	3	9	C-05	3	mitigate	no
+R-06	a provider silently swaps the model version	4	2	8	C-06	8	accept	yes: no provider change notice feed

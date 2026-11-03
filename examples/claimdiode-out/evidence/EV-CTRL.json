@@ -1,0 +1,47 @@
+{
+ "collected_at": "2026-11-02T00:00:00Z",
+ "content": {
+  "controls": [
+   {
+    "has_receipt": true,
+    "id": "C-01"
+   },
+   {
+    "has_receipt": true,
+    "id": "C-02"
+   },
+   {
+    "has_receipt": true,
+    "id": "C-03"
+   },
+   {
+    "has_receipt": false,
+    "id": "C-04"
+   },
+   {
+    "has_receipt": true,
+    "id": "C-05"
+   },
+   {
+    "has_receipt": false,
+    "id": "C-06"
+   },
+   {
+    "has_receipt": true,
+    "id": "C-07"
+   },
+   {
+    "has_receipt": true,
+    "id": "C-08"
+   }
+  ]
+ },
+ "id": "EV-CTRL",
+ "kind": "control_inventory",
+ "metrics": {
+  "control_count": 8,
+  "open_risks": 3,
+  "receipts_missing": 2,
+  "receipts_on_disk": 6
+ }
+}
