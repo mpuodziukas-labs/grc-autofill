@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Run every tests/test_*.py function with the standard library only (no pytest needed).
 
-Each test is a zero-argument function named test_*. A test passes when it returns without raising.
+Each test is a function named test_*, run once, or once per value of a @pytest.mark.parametrize mark;
+a true skipif mark skips it. A test passes when it returns without raising.
 Last line: "evaluate: N/N tests pass" and rc 0, or "evaluate: RED k/N tests pass" and rc 1.
 """
 import importlib.util
@@ -27,12 +28,23 @@ def main():
             traceback.print_exc(limit=2)
             continue
         for name in sorted(k for k in vars(mod) if k.startswith("test_") and callable(getattr(mod, k))):
-            n += 1
-            try:
-                getattr(mod, name)()
-                p += 1
-            except Exception as e:
-                print("FAIL %s::%s %s: %s" % (f.name, name, type(e).__name__, str(e)[:200]))
+            fn = getattr(mod, name)
+            marks = getattr(fn, "pytestmark", [])
+            if any(m.name == "skipif" and m.args and m.args[0] for m in marks):
+                print("SKIP %s::%s" % (f.name, name))
+                continue
+            # a @pytest.mark.parametrize("arg", values) test runs once per value
+            calls = [((), "")]
+            for m in marks:
+                if m.name == "parametrize":
+                    calls = [((v,), "[%s]" % v) for v in m.args[1]]
+            for args, tag in calls:
+                n += 1
+                try:
+                    fn(*args)
+                    p += 1
+                except Exception as e:
+                    print("FAIL %s::%s%s %s: %s" % (f.name, name, tag, type(e).__name__, str(e)[:200]))
     if n and p == n:
         print("evaluate: %d/%d tests pass" % (p, n))
         return 0
