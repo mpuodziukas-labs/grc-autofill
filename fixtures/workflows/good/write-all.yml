@@ -1,0 +1,15 @@
+# GREEN twin of R1: read at workflow level, write scoped to the one job. Synthetic.
+name: nightly-heal
+on:
+  schedule:
+    - cron: "5 4 * * *"
+permissions:
+  contents: read
+jobs:
+  heal:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo heal

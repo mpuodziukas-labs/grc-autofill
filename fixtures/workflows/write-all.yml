@@ -1,0 +1,15 @@
+# PLANTED RED (R1): write scopes granted workflow-wide. Synthetic.
+name: nightly-heal
+on:
+  schedule:
+    - cron: "5 4 * * *"
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+jobs:
+  heal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo heal

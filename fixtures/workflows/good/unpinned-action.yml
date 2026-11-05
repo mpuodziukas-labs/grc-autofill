@@ -1,0 +1,11 @@
+# GREEN twin of R2: third-party action pinned to a 40-character commit sha. Synthetic.
+name: lint
+on: [push]
+permissions:
+  contents: read
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: example-org/lint-action@0123456789abcdef0123456789abcdef01234567

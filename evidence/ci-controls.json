@@ -1,0 +1,47 @@
+{
+  "scope": "Workflow lint rules in policy/ci/workflow.rego, mapped to supply-chain controls. Rule logic is original; zizmor and actionlint cover overlapping ground and are not replaced. Mapping is a draft for a human assessor, not an attestation.",
+  "run": "conftest test -p policy/ci fixtures/workflows/*.yml",
+  "rows": [
+    {
+      "rule": "R1",
+      "check": "workflow-level write permissions",
+      "fixture_red": "fixtures/workflows/write-all.yml",
+      "fixture_green": "fixtures/workflows/good/write-all.yml",
+      "controls": [
+        {"id": "SSDF PS.1.1", "label": "INFERRED", "basis": "PS.1.1 requires least privilege so only authorized personnel, tools and services can reach code; a workflow-wide write token is broader than that. Requirement text read from the fetched PDF, the application to CI tokens is a paraphrase.", "source_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf"},
+        {"id": "SSDF PO.5.1", "label": "INFERRED", "basis": "PO.5.1 text: Separate and protect each environment involved in software development. Treating job scoping as environment separation is a paraphrase.", "source_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf"}
+      ]
+    },
+    {
+      "rule": "R2",
+      "check": "third-party action not pinned to a 40-character sha",
+      "fixture_red": "fixtures/workflows/unpinned-action.yml",
+      "fixture_green": "fixtures/workflows/good/unpinned-action.yml",
+      "controls": [
+        {"id": "SSDF PW.4.4", "label": "GROUNDED", "basis": "PW.4.4 text, read from the fetched PDF: Verify that acquired commercial, open-source, and all other third-party software components comply with the requirements, as defined by the organization, throughout their life cycles. A mutable tag cannot be verified at a point in time.", "source_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf"},
+        {"id": "SSDF PW.4.1", "label": "INFERRED", "basis": "PW.4.1 covers acquiring and maintaining well-secured third-party components; sha pinning as the means is a paraphrase.", "source_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf"},
+        {"id": "SLSA v1.0 Build L3 Isolated", "label": "INFERRED", "basis": "Requirement text: any external influence on the build was specifically requested by the build itself. A moving tag lets the action author change the build without a change in this repo. Mapping is a paraphrase.", "source_url": "https://slsa.dev/spec/v1.0/requirements"}
+      ]
+    },
+    {
+      "rule": "R3",
+      "check": "pull_request_target combined with checkout of the PR head",
+      "fixture_red": "fixtures/workflows/prt-head-checkout.yml",
+      "fixture_green": "fixtures/workflows/good/prt-head-checkout.yml",
+      "controls": [
+        {"id": "SLSA v1.0 Build L3 Isolated", "label": "INFERRED", "basis": "Requirement text: the build platform ensured that the build steps ran in an isolated environment, free of unintended external influence. Untrusted PR code running in a privileged trigger context is external influence the build did not request. Mapping is a paraphrase.", "source_url": "https://slsa.dev/spec/v1.0/requirements"},
+        {"id": "SSDF PO.5.1", "label": "INFERRED", "basis": "Separating untrusted contributions from the privileged build environment; paraphrase of PO.5.1.", "source_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf"}
+      ]
+    },
+    {
+      "rule": "R4",
+      "check": "github.event expression expanded inside a run script",
+      "fixture_red": "fixtures/workflows/event-in-run.yml",
+      "fixture_green": "fixtures/workflows/good/event-in-run.yml",
+      "controls": [
+        {"id": "SLSA v1.0 Build L3 Isolated", "label": "INFERRED", "basis": "Attacker-controlled event text becomes script source, an external influence on the build the build did not request. Mapping is a paraphrase.", "source_url": "https://slsa.dev/spec/v1.0/requirements"},
+        {"id": "SSDF PO.5.1", "label": "INFERRED", "basis": "Keeps untrusted input out of the build environment's command channel; paraphrase of PO.5.1.", "source_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf"}
+      ]
+    }
+  ]
+}

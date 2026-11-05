@@ -1,0 +1,12 @@
+# PLANTED RED (R4): event field expanded inside a run script. Synthetic.
+name: greet
+on:
+  issues:
+    types: [opened]
+permissions:
+  contents: read
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "title is ${{ github.event.issue.title }}"

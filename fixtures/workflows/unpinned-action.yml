@@ -1,0 +1,11 @@
+# PLANTED RED (R2): third-party action pinned to a mutable tag. Synthetic.
+name: lint
+on: [push]
+permissions:
+  contents: read
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: example-org/lint-action@v2
